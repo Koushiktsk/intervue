@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Practice Partner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen active">
+        <div class="welcome-container">
+            <div class="hero-section">
+                <div class="hero-icon">🎯</div>
+                <h1 class="hero-title">Interview Practice Partner</h1>
+                <p class="hero-subtitle">Master your interview skills with AI-powered voice coaching</p>
+
+                <!-- Name Input -->
+                <div style="max-width: 400px; margin: 30px auto 40px;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 12px; color: #374151; text-align: left;">
+                        What's your name?
+                    </label>
+                    <input type="text" id="candidate-name" placeholder="Enter your name"
+                           style="width: 100%; padding: 14px 20px; border: 2px solid #e5e7eb; border-radius: 12px; font-size: 16px;">
+                </div>
+
+                <button class="btn-hero" onclick="showRoleSelection()">
+                    <span>Start Your Practice</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎤</div>
+                    <h3>Voice Interaction</h3>
+                    <p>Real interview experience with voice Q&A</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Feedback</h3>
+                    <p>Get scored and analyzed after each answer</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Detailed Reports</h3>
+                    <p>Comprehensive analysis to improve</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Role Selection -->
+    <div id="role-screen" class="screen">
+        <div class="step-container">
+            <div class="step-header">
+                <button class="btn-back" onclick="showScreen('welcome-screen')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Back
+                </button>
+                <span class="step-badge">Step 1 of 3</span>
+                <h2 class="step-title">Choose Your Role</h2>
+                <p class="step-subtitle">Select the position you're preparing for</p>
+            </div>
+            <div class="roles-grid">
+                <div class="role-card" onclick="selectRole('1')">
+                    <div class="role-icon">💻</div>
+                    <h3>Software Engineer</h3>
+                    <p>Algorithms • System Design • Coding</p>
+                    <div class="role-arrow">→</div>
+                </div>
+                <div class="role-card" onclick="selectRole('2')">
+                    <div class="role-icon">📊</div>
+                    <h3>Sales Representative</h3>
+                    <p>Communication • Persuasion • Closing</p>
+                    <div class="role-arrow">→</div>
+                </div>
+                <div class="role-card" onclick="selectRole('3')">
+                    <div class="role-icon">🛍️</div>
+                    <h3>Retail Associate</h3>
+                    <p>Customer Service • Problem Solving</p>
+                    <div class="role-arrow">→</div>
+                </div>
+                <div class="role-card" onclick="selectRole('4')">
+                    <div class="role-icon">📱</div>
+                    <h3>Product Manager</h3>
+                    <p>Strategy • Stakeholder Management</p>
+                    <div class="role-arrow">→</div>
+                </div>
+                <div class="role-card" onclick="selectRole('5')">
+                    <div class="role-icon">📈</div>
+                    <h3>Data Analyst</h3>
+                    <p>SQL • Analytics • Data Interpretation</p>
+                    <div class="role-arrow">→</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Level -->
+    <div id="experience-screen" class="screen">
+        <div class="step-container">
+            <div class="step-header">
+                <button class="btn-back" onclick="showScreen('role-screen')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Back
+                </button>
+                <span class="step-badge">Step 2 of 3</span>
+                <h2 class="step-title">Your Experience Level</h2>
+                <p class="step-subtitle">Questions will be tailored to your level</p>
+            </div>
+            <div class="experience-list">
+                <div class="exp-card" onclick="selectExperience('1')">
+                    <div class="exp-left">
+                        <div class="exp-icon">🌱</div>
+                        <div class="exp-info">
+                            <h3>Fresher or Entry Level</h3>
+                            <p>0-2 years • Basic concepts and definitions</p>
+                        </div>
+                    </div>
+                    <div class="exp-arrow">→</div>
+                </div>
+                <div class="exp-card" onclick="selectExperience('2')">
+                    <div class="exp-left">
+                        <div class="exp-icon">⚡</div>
+                        <div class="exp-info">
+                            <h3>Mid-Level</h3>
+                            <p>2-5 years • Practical application and problem-solving</p>
+                        </div>
+                    </div>
+                    <div class="exp-arrow">→</div>
+                </div>
+                <div class="exp-card" onclick="selectExperience('3')">
+                    <div class="exp-left">
+                        <div class="exp-icon">🎯</div>
+                        <div class="exp-info">
+                            <h3>Senior</h3>
+                            <p>5+ years • Complex design and architecture</p>
+                        </div>
+                    </div>
+                    <div class="exp-arrow">→</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Voice Test -->
+    <div id="voice-screen" class="screen">
+        <div class="step-container">
+            <div class="step-header">
+                <button class="btn-back" onclick="showScreen('experience-screen')">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Back
+                </button>
+                <span class="step-badge">Step 3 of 3</span>
+                <h2 class="step-title">Ready to Start</h2>
+                <p class="step-subtitle">Your interview is configured and ready</p>
+            </div>
+            <div class="voice-test-card">
+                <div class="alert-box">
+                    <div class="alert-icon">🎤</div>
+                    <div class="alert-content">
+                        <strong>Voice Mode:</strong> The interviewer will speak questions out loud. You'll respond using your microphone. Make sure headphones are plugged in!
+                    </div>
+                </div>
+                <div class="checklist-modern">
+                    <div class="check-item-modern">
+                        <div class="check-circle">✓</div>
+                        <span>Role selected</span>
+                    </div>
+                    <div class="check-item-modern">
+                        <div class="check-circle">✓</div>
+                        <span>Experience level set</span>
+                    </div>
+                    <div class="check-item-modern">
+                        <div class="check-circle">✓</div>
+                        <span>Ready to practice</span>
+                    </div>
+                </div>
+
+                <!-- Interview Duration Selection -->
+                <div style="margin: 24px 0;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 12px; color: #374151;">
+                        How long would you like to practice?
+                    </label>
+                    <div class="duration-grid">
+                        <button class="duration-btn" onclick="selectDuration(3, event)">
+                            <span class="duration-time">3</span>
+                            <span class="duration-label">minutes</span>
+                        </button>
+                        <button class="duration-btn" onclick="selectDuration(5, event)">
+                            <span class="duration-time">5</span>
+                            <span class="duration-label">minutes</span>
+                        </button>
+                        <button class="duration-btn" onclick="selectDuration(10, event)">
+                            <span class="duration-time">10</span>
+                            <span class="duration-label">minutes</span>
+                        </button>
+                        <button class="duration-btn" onclick="selectDuration(15, event)">
+                            <span class="duration-time">15</span>
+                            <span class="duration-label">minutes</span>
+                        </button>
+                        <button class="duration-btn" onclick="selectDuration(20, event)">
+                            <span class="duration-time">20</span>
+                            <span class="duration-label">minutes</span>
+                        </button>
+                        <button class="duration-btn" onclick="selectDuration(30, event)">
+                            <span class="duration-time">30</span>
+                            <span class="duration-label">minutes</span>
+                        </button>
+                        <button class="duration-btn" onclick="selectDuration(45, event)">
+                            <span class="duration-time">45</span>
+                            <span class="duration-label">minutes</span>
+                        </button>
+                        <button class="duration-btn" onclick="selectDuration(60, event)">
+                            <span class="duration-time">60</span>
+                            <span class="duration-label">minutes</span>
+                        </button>
+                    </div>
+                    <p style="font-size: 13px; color: #6b7280; margin-top: 12px; text-align: center;">
+                        We'll ask as many different questions as possible within your selected time
+                    </p>
+                </div>
+
+                <button class="btn-start" onclick="startInterview()">
+                    Launch Interview
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interview Screen - Chatbot Style -->
+    <div id="interview-screen" class="screen">
+        <div class="chat-container">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="interviewer-info">
+                    <div class="interviewer-avatar">🎯</div>
+                    <div class="interviewer-details">
+                        <div class="interviewer-name">AI Interviewer</div>
+                        <div class="interviewer-status" id="interviewer-status">
+                            <span class="status-dot"></span> Ready
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="progress-info">
+                        <div class="timer-display" id="timer-display">⏱️ 5:00</div>
+                        <div class="question-counter" id="question-counter">Question 1</div>
+                    </div>
+                    <button class="btn-quit" onclick="quitInterview()">
+                        ❌ Quit Interview
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Messages Area -->
+            <div class="chat-messages" id="chat-messages">
+                <!-- Messages will be added here dynamically -->
+            </div>
+
+            <!-- Chat Input Area -->
+            <div class="chat-input-area" id="chat-input-area">
+                <div class="recording-indicator" id="recording-indicator" style="display:none;">
+                    <div class="recording-pulse-small"></div>
+                    <span>Listening...</span>
+                </div>
+                <div class="input-hint" id="input-hint">Speak your answer when ready</div>
+                <button class="btn-send" id="btn-send" style="display:none;" onclick="stopRecording()">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M2 10L18 10M18 10L12 4M18 10L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Send Answer
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Report Screen -->
+    <div id="report-screen" class="screen">
+        <div class="report-container">
+            <div class="report-header">
+                <div class="report-icon">🎉</div>
+                <h2>Interview Complete!</h2>
+                <div class="report-score">
+                    <span class="score-label">Overall Score</span>
+                    <span class="score-value" id="final-score">0/10</span>
+                </div>
+            </div>
+            <div class="report-content" id="report-content"></div>
+            <button class="btn-restart" onclick="location.reload()">Start New Interview</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
