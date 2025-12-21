@@ -33,7 +33,7 @@ except ImportError:
     print("  pip install SpeechRecognition pywin32 pyaudio")
 
 load_dotenv()
-GEMINI_API_KEY = "AIzaSyCEqK8Hh3ix6AwzUYqDTdWI_1Z4AruYiko"
+GEMINI_API_KEY = "Enter_your_API"
 
 if not GEMINI_API_KEY:
     print("You need to set environment variables GEMINI_API_KEY")
@@ -444,3 +444,4 @@ Use simple formatting:
             return text
         except Exception as e:
             return f"Error generating feedback: {e}"
+
